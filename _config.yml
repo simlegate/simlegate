@@ -1,4 +1,4 @@
 name: simlegate
 post: 80
 pygments: true
-exclude: [".rvmrc", ".rbenv-version", ".gitignore", "README.md", "Rakefile", "changelog.md", "Gemfile", "Gemfile.lock", "Procfile"]
+exclude: [ ".gitignore", "README.md", "Gemfile", "Gemfile.lock", "Procfile"]
