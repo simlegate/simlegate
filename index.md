@@ -1,11 +1,8 @@
 ---
-layout: default
 title: Your New Jekyll Site
 ---
 
-<div id="home">
-    {% for post in site.posts %}
-    <p class="padding10 bg-color-blueLight" ><a href="{{ post.url }}">{{ post.title }}</a></p>
-    {% endfor %}
-  </ul>
-</div>
+## 第一篇文章
+## 第二篇文章
+## 第三篇文章
+## 第四篇文章
