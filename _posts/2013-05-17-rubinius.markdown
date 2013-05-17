@@ -1,0 +1,44 @@
+---
+layout: post
+title:  "Rubinius Use Ruby™"
+date:   2013-05-17 14:52:07
+categories: jekyll update
+---
+
+# what is Rubinius?
+
+**An environment for the Ruby programming language providing performance, accessibility, and improved programmer productivity**
+
+[Rubinius](http://rubini.us/) is software that translates the code for the Ruby programming language such as
+
+{% highlight ruby %}
+  puts "hello world"
+{% endhighlight %}
+
+and turns it into efficient machine code like this
+
+{% highlight ruby %}
+push %rbp; mov %rsp, %rbp; 
+push %rbx; subq $0x98, %rsp; 
+cmp $0x0, 0x10(%rcx); 
+call 0xffffffffff472010; jmp 0x9c; …
+{% endhighlight %}
+
+then executes it.
+
+# Technically, what is Rubinius?
+
+Rubinius is an implementation of the Ruby programming language.
+
+The Rubinius bytecode virtual machine is written in C++, incorporating LLVM to compile bytecode to machine code at runtime. The bytecode compiler and vast majority of the core classes are written in pure Ruby.
+
+To interact with the rest of the system, the VM provides primitives which can be attached to methods and invoked. Additionally, FFI provides a direct call path to most C functions.
+
+Rubinius uses a precise, compacting, generational garbage collector. It includes a compatible C-API for C extensions written for the standard Ruby interpreter (often referred to as MRI—Matz's Ruby Implementation).
+
+# How compatible is Rubinius?
+
+From the start, compatibility has been critical to us. To that end, we created the RubySpec to ensure that we maintained parity with official Ruby. We are currently at a 93% RubySpec pass rate and growing everyday.
+
+For now Rubinius is targeting MRI 1.8.7 (1.9 is on the post 1.0 list). Most Gems, Rails plugins and C-Extensions work right out of the box. If you find a bug, let us know and we'll get on top of it.
+
