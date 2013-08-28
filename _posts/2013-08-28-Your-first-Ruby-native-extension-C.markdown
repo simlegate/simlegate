@@ -145,7 +145,8 @@ Rakefile
 {% endhighlight %}
 
 This is now enough to run rake compile, wherein rake-compiler works its magic. This will create a Makefile, and some *.o and *.so files. You should not check these into git, or ship them as part of the gem – these compilation artifacts are created on install.
-{% highlight shell %}
+
+{% highlight c %}
 $ rake compile
 mkdir -p lib
 mkdir -p tmp/x86_64-linux/faye_websocket/1.9.3
@@ -170,7 +171,7 @@ $ irb -r ./lib/faye_websocket
 >> Faye::WebSocket.mask [1,2,3,4], [5,6,7,8]
 => [4, 4, 4, 12]
 
-{% highlight ruby %}
+{% endhighlight %}
 
 So the final part of the process is to load this file from our main library code, for example:
 
@@ -185,7 +186,7 @@ module Faye
   end
 end
 
-{% highlight ruby %}
+{% endhighlight %}
 
 And that’s all there is to it. Just a few points to remember:
   * By convention, rake-compiler expects extensions to be in ext/
