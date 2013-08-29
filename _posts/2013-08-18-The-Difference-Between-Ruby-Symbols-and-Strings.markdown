@@ -2,7 +2,6 @@
 layout: post
 title:  "The Difference Between Ruby Symbols and Strings™"
 date:   2013-08-18 23:29:07
-categories: jekyll update
 ---
 
 # The Difference Between Ruby Symbols and Strings

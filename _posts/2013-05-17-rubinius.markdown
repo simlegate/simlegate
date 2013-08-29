@@ -2,7 +2,6 @@
 layout: post
 title:  "Rubinius Use Ruby™"
 date:   2013-05-17 14:52:07
-categories: jekyll update
 ---
 
 # what is Rubinius?

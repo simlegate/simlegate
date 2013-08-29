@@ -2,7 +2,6 @@
 layout: post
 title:  "Your first Ruby native extension: C"
 date:   2013-08-28 21:59:07
-categories: jekyll update
 ---
 # Your first Ruby native extension: C
 A few months back I released faye-websocket 0.4, my first gem that contained native code. After a few mis-step releases I got a working build for MRI and JRuby, but getting there was a little tricky. What follows is a quick how-to from someone who knows barely any C or Java, to explain how to wire your code up for release.  
