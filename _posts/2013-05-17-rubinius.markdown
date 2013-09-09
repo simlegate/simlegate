@@ -41,3 +41,5 @@ From the start, compatibility has been critical to us. To that end, we created t
 
 For now Rubinius is targeting MRI 1.8.7 (1.9 is on the post 1.0 list). Most Gems, Rails plugins and C-Extensions work right out of the box. If you find a bug, let us know and we'll get on top of it.
 
+# Thanks
+[rubini](http://rubini.us/)
