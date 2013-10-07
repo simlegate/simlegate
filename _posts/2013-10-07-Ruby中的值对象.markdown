@@ -3,14 +3,53 @@ layout: post
 title:  "Ruby中的值对象"
 date:   2013-10-07 21:52:07
 ---
+这篇文章解释了值对象的概念。它首先定义并演示了值对象，然后阐述了构建有效值对象的规则以及违反的概念的后果。最后，展示了几种用Ruby实现值对象的方法。
+虽然这些例子都是用Ruby实现的，但是也同样适用其他语言。
 
+# 什么是值对象。
+在[P of EAA](http://martinfowler.com/bliki/ValueObject.html)定义如下
+> 决定两个值对象相等的是它们内部的fields，而不是它们的identity
 
+这就意味着拥有相等内部fields的值对象，它们必然相等。所有fields的值相等充分能够证明值对象的相等性。
+
+最简单的例子就是原始对象－Symbol, String, Integer, TrueClass(true), FalseClass(false), NilClass(nil), Range, Regexp 等等.
+每个对象的值决定了它们的相等性。比如，在你的程序中任何地方出现 1.0, 它必然等于 1.0 因为它们相等。
 {% highlight ruby %}
-push %rbp; mov %rsp, %rbp; 
-push %rbx; subq $0x98, %rsp; 
-cmp $0x0, 0x10(%rcx); 
-call 0xffffffffff472010; jmp 0x9c; …
+var1 = :symbol
+var2 = :symbol
+var1 == var2  # => true
+ 
+var1 = 'string'
+var2 = 'string'
+var1 == var2  # => true
+ 
+var1 = 1.0
+var2 = 1.0
+var1 == var2  # => true
+ 
+var1 = true
+var2 = true
+var1 == var2  # => true
+ 
+var1 = nil
+var2 = nil
+var1 == var2  # => true
+ 
+var1 = /reg/
+var2 = /reg/
+var1 == var2  # => true
+ 
+var1 = 1..2
+var2 = 1..2
+var1 == var2  # => true
+ 
+var1 == [1, 2, 3]
+var2 == [1, 2, 3]
+var1 == var2  # => true
+ 
+var1 == { key: 'value'}
+var2 == { key: 'value'}
+var1 == var2  # => true
 {% endhighlight %}
 
-then executes it.
-
+上面是一些只有一个filed的值对象例子
