@@ -7,8 +7,10 @@ date:   2013-10-07 21:52:07
 虽然这些例子都是用Ruby实现的，但是也同样适用其他语言。
 
 # 什么是值对象。
-在[P of EAA](http://martinfowler.com/bliki/ValueObject.html)定义如下
+在[P of EAA](http://martinfowler.com/bliki/ValueObject.html)定义如下:
+
 > 决定两个值对象相等的是它们内部的fields，而不是它们的identity
+>
 
 这就意味着拥有相等内部fields的值对象，它们必然相等。所有fields的值相等充分能够证明值对象的相等性。
 
