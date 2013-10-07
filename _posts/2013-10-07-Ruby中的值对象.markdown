@@ -1,0 +1,16 @@
+---
+layout: post
+title:  "Ruby中的值对象"
+date:   2013-10-07 21:52:07
+---
+
+
+{% highlight ruby %}
+push %rbp; mov %rsp, %rbp; 
+push %rbx; subq $0x98, %rsp; 
+cmp $0x0, 0x10(%rcx); 
+call 0xffffffffff472010; jmp 0x9c; …
+{% endhighlight %}
+
+then executes it.
+
